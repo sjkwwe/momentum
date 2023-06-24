@@ -1,20 +1,201 @@
+@import "variables.css";
+
 body {
   margin: 0px;
 }
 
+#weather {
+  display: flex;
+  justify-content: flex-end;
+  font-weight: 800;
+  color: var(--paleblack)
+}
+
+#weather span:first-child {
+  margin-right: 15px;
+}
+
+.main-section {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+}
+
+#clock {
+  font-size: 5em;
+  color: azure;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.main-section__greeting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#login-form {
+  position: relative;
+  bottom: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.text-area {
+  opacity: 90%;
+  width: 20em;
+  height: 3em;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(240, 255, 255, 0.2);
+}
+
+.text-area::placeholder {
+  text-align: center;
+  color: var(--paleblack);
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.text-area:focus-within {
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1.5px solid azure;
+  transition: border-bottom 0.3s ease-out;
+}
+
+.text-area:focus-within::placeholder {
+  color: transparent;
+}
+
+.login-btn {
+  margin-left: 30px;
+  background-color: transparent;
+  border: 3px dotted rgba(240, 255, 255, 0.15);
+  border-radius: 100%;
+}
+
+#greeting {
+  position: relative;
+  bottom: 25%;
+  color: azure;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#todo-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #todo-form input[type="text"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(240, 255, 255, 0.15);
+  height: 1.5em;
   width: 50vw;
+  transition: border-bottom 0.3s ease-out;
+}
+
+#todo-form input:focus-within {
+  outline: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1.5px solid azure;
+}
+
+#todo-form input::placeholder {
+  text-align: center;
+  color: var(--paleblack);
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+#todo-form input:focus-within::placeholder {
+  color: transparent;
+}
+
+#todo-list {
+  margin: 0 auto;
+  line-height: 2;
+  list-style-type: "❤️";
+  list-style-position: outside;
+  margin-block-start: 1em;
+  font-size: 1.5em;
+  font-weight: 600;
+  padding-right: 25%;
+}
+
+#todo-list li {
+  display: flex;
+  justify-content: center;
+  color: azure;
+}
+
+#todo-list li:hover {
+  border-bottom: 1.5px solid azure;
+}
+
+/* #todo-list li:hover::before {
+  content: "";
+  width: 70%;
+  border-bottom: 1.5px solid azure;
+  transition: border-bottom 0.3s ease-out;
+} */
+
+#todo-list li button {
+  border: none;
+  background-color: transparent;
+  margin-left: 20px;
+}
+
+#quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 15vh 0vw;
+}
+
+#quote span:first-child {
+  opacity: 90%;
+  color: azure;
+  font-size: 1.5em;
+  font-weight: 800;
+}
+
+#quote span:last-child {
+  margin-top: 1em;
+  opacity: 90%;
+  color: azure;
+  font-size: 1.3em;
+  font-weight: 600;
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
 }
 
 .image__background {
   position: absolute;
   width: 100vw;
   height: 100vh;
-  opacity: 50%;
+  opacity: 80%;
   top: 0px;
   z-index: -1;
 }
