@@ -35,6 +35,19 @@
         />
       </form>
       <ul id="todo-list"></ul>
+      <div class="floating-panel-div">
+      <div id="floating-panel">
+        <b>Mode of Travel: </b>
+        <select id="mode">
+          <option value="TRANSIT">Transit</option>
+          <option value="DRIVING">Driving</option>
+          <option value="WALKING">Walking</option>
+          <option value="BICYCLING">Bicycling</option>
+        </select>
+      </div>
+    </div>
+      <div id="map">
+        </div>
       <div id="quote">
         <span></span>
         <span></span>
@@ -47,5 +60,9 @@
     <script src="src/todo.js"></script>
     <script src="src/weather.js"></script>
     <script src="src/keys.js"></script>
+    <script src="src/maps.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_ps8nZ1kViH3N4GIWkV1Mv1rTjqkdP2k&callback=initMap&v=weekly"
+    ></script>
   </body>
 </html>
