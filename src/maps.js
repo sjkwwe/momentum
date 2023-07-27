@@ -9,6 +9,8 @@ async function initMap() {
   
   // The location of SPH
   const position = { lat: 37.5426955 , lng: 126.9517408 };
+  const {PlacesService} = await google.maps.importLibrary("places");
+  const {Marker} = await google.maps.importLibrary("marker");
   map = new google.maps.Map(document.getElementById("map"), {
     center: position,
     zoom: 16,
@@ -44,10 +46,10 @@ async function initMap() {
   directionsRenderer = new google.maps.DirectionsRenderer();
   directionsRenderer.setMap(map);
 
-  calculateAndDisplayRoute(directionsService, directionsRenderer, directions);
+  await calculateAndDisplayRoute(directionsService, directionsRenderer, directions);
   
     
-  };
+  
 
   infoWindow = new google.maps.InfoWindow({
     content: "서울시 마포구 마포대로92 효성해링턴스퀘어 A동 3층"
@@ -95,7 +97,7 @@ async function findNearBank(results, status) {
       }
     }
   }
-
+};
 
 function createMarker(place) {
   if (!place.geometry || !place.geometry.location) return;
@@ -131,6 +133,5 @@ async function calculateAndDisplayRoute(directionsService, directionsRenderer, d
       window.alert("Directions request failed due to " + status);
     }
   });
-}
+};
 
-window.initMap = initMap;
