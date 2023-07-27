@@ -88,6 +88,8 @@ async function initMap() {
       handleLocationError(false, infoWindow, map.getCenter());
     }
   });
+};
+
 
 async function findNearBank(results, status) {
   const {PlacesServiceStatus} = await google.maps.importLibrary("places")
@@ -97,7 +99,7 @@ async function findNearBank(results, status) {
       }
     }
   }
-};
+
 
 function createMarker(place) {
   if (!place.geometry || !place.geometry.location) return;
